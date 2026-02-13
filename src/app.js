@@ -1,12 +1,18 @@
 const express = require('express');
-const router = express.Router();
-const { createSale, getLeaderboard, deleteSale } = require('./controller/saleController.js');
+const cors = require('cors');
+const saleRoutes = require('./router/saleRoutes'); 
 
-// Create a sale
-router.post('/sales', createSale);
+const app = express();
 
-// Get leaderboard
-router.get('/leaderboard', getLeaderboard);
+// Middleware
+app.use(cors());
+app.use(express.json());
 
 
-module.exports = router;
+
+app.use('/api', saleRoutes);
+
+
+app.get('/', (req, res) => res.send('API is running...'));
+
+module.exports = app;
