@@ -1,4 +1,4 @@
-const Sale = require('../schema/Sale');
+const Sale = require('../schema/sale');
 const { generateLeaderboard } = require('../services/leaderboardService');
 
 

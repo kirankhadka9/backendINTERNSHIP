@@ -1,4 +1,4 @@
-const Sale = require('../schema/Sale');
+const Sale = require('../schema/sale');
 
 exports.generateLeaderboard = async () => {
   return await Sale.aggregate([
